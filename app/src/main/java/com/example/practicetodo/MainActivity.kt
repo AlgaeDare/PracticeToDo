@@ -83,8 +83,7 @@ class MainActivity : AppCompatActivity() {
     fun delete(id: String) {
         realm.executeTransaction {
             val task = realm.where(Task::class.java).equalTo("id", id).findFirst()
-                ?: return@executeTransaction
-            task.deleteFromRealm()
+            task?.deleteFromRealm()
         }
     }
 
