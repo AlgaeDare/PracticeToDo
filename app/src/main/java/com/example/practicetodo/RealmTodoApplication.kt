@@ -10,6 +10,7 @@ class RealmTodoApplication : Application() {
         Realm.init(this)
         val realmConfig = RealmConfiguration.Builder()
             .deleteRealmIfMigrationNeeded()
+            .allowWritesOnUiThread(true)
             .build()
         Realm.setDefaultConfiguration(realmConfig)
     }
