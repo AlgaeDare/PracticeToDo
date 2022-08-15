@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.setViewTreeOnBackPressedDispatcherOwner
 import androidx.recyclerview.widget.RecyclerView
@@ -43,10 +44,13 @@ class TaskAdapter(
     }
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageView: ImageView = view.imageView
-        val contentTextView: TextView = view.contentTextView
-        val dateTextView: TextView = view.dateTextView
+        val imageView: ImageView = view.findViewById(R.id.imageView)
+        val contentTextView: TextView = view.findViewById(R.id.contentTextView)
+        val dateTextView: TextView = view.findViewById(R.id.dateTextView)
+        val container: LinearLayout = view.findViewById(R.id.container)
     }
+
+
 
     interface OnItemClickListener {
         fun onItemClick(item: Task)
